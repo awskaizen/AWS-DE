@@ -1,0 +1,159 @@
+             --CREATE DATABASE
+--SYNTAX :- CREATE DATABASE <DATBASE_NAME> ADE_NOV
+
+CREATE DATABASE ADE_NOV
+
+USE ADE_NOV
+
+--CREATE TABLE
+--SYNTAX: CREATE TABLE <TABLE_NAME> (<COL_NAME1> <DATA_TYPE>, <COL_NAME2> <DATA_TYPE>)
+
+CREATE TABLE HIPPO (ID INT, NAME VARCHAR(20), EMAIL VARCHAR(50))
+
+--90 PERCENT USED DATATYPES
+--INT, BIGINT, VARCHAR, NVARCHAR, DATE, DATETIME, BOOL
+
+--ADD A NEW COLUMN TO EXISTING TABLE
+--SYNTAX: ALTER TABLE <TABLENAME> ADD <COLNAME> <DATATYPE>;
+
+ALTER TABLE HIPPO
+ADD CONTACT INT
+
+--ADD TO COLS
+ALTER TABLE HIPPO
+ADD ADDRESS VARCHAR(30), STATES VARCHAR(30) 
+
+SELECT * FROM HIPPO
+
+INSERT INTO HIPPO (ID,NAME,EMAIL,CONTACT,ADDRESS,STATES) VALUES (mailto:1,'raju','raju@gmail.com',123456789,'1234SAM','TNA')
+
+INSERT INTO HIPPO VALUES (mailto:2,'shan','shan@gmail.com',123456089,'122SAM','TNA')
+
+INSERT INTO HIPPO (NAME,ID,EMAIL,CONTACT,ADDRESS,STATES) VALUES ('mailto:kathuma',3,'kathukkathu@gmail.com',123456089,'122SAM','TNA')
+
+--REMOVE ANY EXISTING COLS
+--SYNTAX: ALTER TABLE <TABLENAME> DROP COLUMN <COLNAME>
+
+ALTER TABLE HIPPO
+DROP COLUMN STATES
+
+ALTER TABLE HIPPO
+DROP COLUMN ADDRESS, CONTACT
+
+SELECT * FROM HIPPO
+
+--RENAME A COLUMN
+--SYNTAX: EXEC sp_rename 'schemaname.tablename.oldcolumnname', 'newcolumnname', 'COLUMN';
+
+EXEC SP_RENAME 'HIPPO.EMAIL', 'MAIL_ID', 'COLUMN'
+
+SELECT * FROM HIPPO
+
+--CREATE A TABLE FROM OTHER TABLE
+--SELECT * INTO <NEWTABLENAME> FROM (OLD TABLE QUERY)
+
+SELECT * INTO KAIZEN FROM HIPPO
+
+SELECT * FROM  KAIZEN
+SELECT * FROM HIPPO
+
+--CREATE A TABLE FROM OTHER TABLE WITHOUT COPYING ANY DATA
+
+SELECT * INTO TEST0 FROM KAIZEN
+WHERE 1 = 2
+
+SELECT * FROM TEST0
+
+SELECT * FROM  KAIZEN
+
+--TRUNCATE --REMOVING ALL ROW VALUES WITHOUT DELETING THE DATA
+--SYNTAX: TRUNCATE TABLE <TABLENAME>
+
+TRUNCATE TABLE KAIZEN
+
+SELECT * FROM KAIZEN
+
+
+--DROP THE TABLE--REMOVING DATA AS WELL AS SCHEMA
+--SYNTAX: DROP TABLE <TABLENAME>
+
+DROP TABLE KAIZEN
+
+--Diff b/w truncate and drop
+--truncate will delete the data but will retain the schema [ METADATA<ID,NAME,EMAIL>]
+--drop will delete both schema as well as data
+
+
+--DROP A DATABASE
+--SYNTAX: DROP DATABASE ADE_OCT_SAMPLE
+
+--DROP DATABASE ADE_OCT_SAMPLE
+
+DROP DATABASE HIPPO, KAIZEN
+
+****************************TASK****************************
+ CREATE 3 DATABASE
+
+DBA1
+DBA2
+DBA3
+
+USE DB1
+
+CREATE TABLE <COURSE> ID,TOPIC, <WITH 10 ROWS>
+
+
+Add column duration
+Add column start,complete
+
+copy table <course> to <table> with values
+copy table <course> to <table1> with values
+
+copy tables <course> to <table2> with out values
+
+remove all values from table1
+
+remove table
+
+
+DBA2
+USE DB2
+
+CREATE TABLE <COURSE> ID,TOPIC, <WITH 10 ROWS>
+
+
+Add column duration
+Add column start,complete
+
+copy table <course> to <table> with values
+copy table <course> to <table1> with values
+
+copy tables <course> to <table2> with out values
+
+remove all values from table1
+
+remove table
+
+
+
+DBA3
+USE DB3
+
+CREATE TABLE <COURSE> ID,TOPIC, <WITH 10 ROWS>
+
+
+Add column duration
+Add column start,complete
+
+copy table <course> to <table> with values
+copy table <course> to <table1> with values
+
+copy tables <course> to <table2> with out values
+
+remove all values from table1
+
+remove table
+
+delete all database
+
+********************************************************************************************************************************************
